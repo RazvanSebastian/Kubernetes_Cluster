@@ -1,0 +1,30 @@
+##########################
+# [START jenkins_deployment]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+  namespace: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+       app: master
+  template:
+    metadata:
+      labels:
+        app: master
+    spec:
+      serviceAccountName: jenkins
+      containers:
+        - image: jenkins/jenkins:lts
+          name: jenkins
+          ports:
+            - containerPort: 8080
+              name: http-port
+            - containerPort: 50000
+              name: jnlp-port
+          env:
+            - name: JAVA_OPTS
+              value: -Djenkins.install.runSetupWizard=false
+# [END jenkins_deployment]

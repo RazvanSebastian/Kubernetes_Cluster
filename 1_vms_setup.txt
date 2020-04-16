@@ -1,0 +1,52 @@
+0. Setup network interface
+===========================
+ -> $ sudo vim /etc/network/interfaces
+ 
+ -> Copy the followings:
+		# This file describes the network interfaces available on your system
+		# and how to activate them. For more information, see interfaces(5).
+
+		# The loopback network interface
+		auto lo
+		iface lo inet loopback
+
+		# Bridge network
+		auto enp0s3
+		iface enp0s3 inet dhcp
+		
+		# Host only network
+		auto enp0s8
+		iface enp0s8 inet dhcp  
+		
+ -> $ sudo service networking restart
+
+1. Update packages
+=========================== 
+ -> $ sudo apt update
+
+2. Install ssh server
+===========================
+ -> $ sudo apt install openssh-server
+ 
+
+3. Setup systcl
+===========================
+ -> $ sudo vim /etc/sysctl.conf
+ 
+ -> Copy at the end of file:
+		net.ipv6.conf.all.disable_ipv6 = 1
+		net.ipv6.conf.default.disable_ipv6 = 1
+		net.ipv6.conf.lo.disable_ipv6 = 1
+ -> $ sudo sysctl -p
+ 
+4. Setup hostname
+============================
+ -> $ sudo vim /etc/hostname
+ -> $ sudo vim /etc/hosts
+ -> RESET THE VM
+ 
+5. Swap off
+============================
+ -> $ swapoff -a
+ -> $ sudo vim /etc/fstab
+ -> Comment the line with UUID from 

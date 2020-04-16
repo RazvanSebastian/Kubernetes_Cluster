@@ -1,0 +1,15 @@
+Step1 : Create jenkins namespace
+ -> kubectl create namespace jenkins
+
+Step2 :  Create service account to let jenkins to have the permission to create resources (pods)
+ -> kubectl create -f account-service.yaml 
+
+Step3: Create services
+ -> kubectl create -f jenkins-service.yaml
+
+Step4: Create deployment
+ ->  kubectl create -f jenkins-deployment.yaml
+
+Step5: Setup jenkins
+	5.1. Install the following plugins: Kubernetes and SSH Agent
+	5.2. Setup the Cloud configuration (see folder "kubernetes_jenkins_setup" )
