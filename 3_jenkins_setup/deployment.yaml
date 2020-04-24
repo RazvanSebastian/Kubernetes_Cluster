@@ -27,4 +27,11 @@ spec:
           env:
             - name: JAVA_OPTS
               value: -Djenkins.install.runSetupWizard=false
+          volumeMounts:
+            - name: jenkins-home
+              mountPath: /var/jenkins_home
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: jenkins-pv-claim
 # [END jenkins_deployment]

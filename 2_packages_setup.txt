@@ -69,3 +69,9 @@ Restart cluster
  -> swapoff -a
  -> docker restart $(docker ps -a -q)
  -> systemctl restart kubelet
+ 
+ -> docker rm $(docker ps -a -f status=exited -q)
+ 
+==========================================
+Kubernetes connection to master via token
+==========================================
