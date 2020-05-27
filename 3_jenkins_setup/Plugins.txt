@@ -1,0 +1,16 @@
+Kubernetes
+	https://plugins.jenkins.io/kubernetes/
+
+Pipeline
+	https://plugins.jenkins.io/workflow-aggregator/
+
+FileProvider
+	https://plugins.jenkins.io/config-file-provider/
+
+Pipeline Maven Integration
+	https://plugins.jenkins.io/pipeline-maven/
+
+Git (misc)
+
+Kubernetes Continuous Deploy
+	https://plugins.jenkins.io/kubernetes-cd/

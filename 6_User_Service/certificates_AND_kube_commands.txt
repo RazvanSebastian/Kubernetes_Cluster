@@ -1,0 +1,6 @@
+openssl genrsa -out developer.key 2048
+openssl req -new -key developer.key -out developer.csr -subj "/CN=developer/O=dev-group"
+openssl x509 -req -in developer.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out developer.crt -days 500
+
+kubectl config set-credentials developer --client-certificate=/home/user/user-credentials/developer.crt  --client-key=/home/user/user-credentials/developer.key
+kubectl config set-context developer-deplyoment --cluster=kubernetes --namespace=development --user=developer
