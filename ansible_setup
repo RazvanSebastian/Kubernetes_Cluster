@@ -10,9 +10,9 @@
   Add the followings
   ==================
       [k8s-servers]
-      master ansible_host=192.168.1.101
-      slave1 ansible_host=192.168.1.105
-      slave2 ansible_host=192.168.1.104
+      master ansible_sudo_pass=kudo ansible_host=192.168.1.101
+      slave1 ansible_sudo_pass=kudo ansible_host=192.168.1.105
+      slave2 ansible_sudo_pass=kudo ansible_host=192.168.1.104
 
       [all:vars]
       ansible_python_interpreter=/usr/bin/python3
