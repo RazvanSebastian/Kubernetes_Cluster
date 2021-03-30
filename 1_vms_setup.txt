@@ -19,6 +19,9 @@
 		iface enp0s8 inet dhcp  
 		
  -> $ sudo service networking restart
+ or
+ -> $ sudo service network-manager restart
+ -> $ sudo systemctl restart NetworkManager.service
 
 1. Update packages
 =========================== 
