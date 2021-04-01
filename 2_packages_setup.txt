@@ -48,9 +48,9 @@ EOF
 ============================
 Initialize kubeadm (Flannel)
 ============================
--> kubeadm config images pull
+-> sudo kubeadm config images pull
 
--> kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.1.10
+-> sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.1.100
 
 -> 
 mkdir -p $HOME/.kube
