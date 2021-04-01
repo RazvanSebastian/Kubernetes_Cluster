@@ -29,6 +29,26 @@ Install Docker
 	-> sudo apt-get update
 	-> apt-cache madison docker-ce
 	-> apt-get install docker-ce=5:19.03.15~3-0~ubuntu-focal docker-ce-cli=5:19.03.15~3-0~ubuntu-focal containerd.io
+	
+6. Configure the Docker daemon, in particular to use systemd for the management of the container’s cgroups.
+
+	-> sudo mkdir /etc/docker
+	-> cat <<EOF | sudo tee /etc/docker/daemon.json
+	{
+	  "exec-opts": ["native.cgroupdriver=systemd"],
+	  "log-driver": "json-file",
+	  "log-opts": {
+	    "max-size": "100m"
+	  },
+	  "storage-driver": "overlay2"
+	}
+	EOF
+
+7. Restart Docker and enable on boot:
+
+	-> sudo systemctl enable docker
+	-> sudo systemctl daemon-reload
+	-> sudo systemctl restart docker
 
 ======================
 Instal kubeadm
