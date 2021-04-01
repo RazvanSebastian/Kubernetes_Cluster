@@ -22,6 +22,9 @@
  or
  -> $ sudo service network-manager restart
  -> $ sudo systemctl restart NetworkManager.service
+ 
+ Status 
+ -> $ sudo systemctl status systemd-networkd
 
 1. Update packages
 =========================== 
