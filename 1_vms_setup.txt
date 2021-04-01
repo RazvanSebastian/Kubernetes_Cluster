@@ -1,7 +1,10 @@
 0. Setup network interface
 ===========================
+
+ -> Install NetworkManager
+ 	-> $ sudo apt-get install network-manager
+	
  -> $ sudo vim /etc/network/interfaces
- 
  -> Copy the followings:
 		# This file describes the network interfaces available on your system
 		# and how to activate them. For more information, see interfaces(5).
